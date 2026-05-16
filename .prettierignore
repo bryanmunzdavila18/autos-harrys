@@ -1,0 +1,13 @@
+node_modules
+.next
+build
+dist
+out
+public
+.husky
+drizzle
+playwright-report
+test-results
+coverage
+pnpm-lock.yaml
+*.log
