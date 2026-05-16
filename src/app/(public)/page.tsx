@@ -5,7 +5,7 @@ export default function LandingPage() {
   return (
     <section className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 py-24 sm:px-6 sm:py-32">
       <span className="bg-muted text-muted-foreground inline-flex items-center rounded-full px-3 py-1 text-xs font-medium">
-        Próximamente · Costa Rica
+        Próximamente · Managua, Nicaragua
       </span>
       <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-6xl">
         Encuentra tu próximo carro en <span className="text-primary">Autos Harrys</span>.

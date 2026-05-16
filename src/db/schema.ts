@@ -46,7 +46,7 @@ export const vehicles = pgTable("vehicles", {
   brand: varchar("brand", { length: 60 }).notNull(),
   model: varchar("model", { length: 100 }).notNull(),
   year: integer("year").notNull(),
-  priceCrc: integer("price_crc").notNull(),
+  priceUsd: integer("price_usd").notNull(),
   mileageKm: integer("mileage_km").notNull(),
   transmission: transmissionEnum("transmission").notNull(),
   fuel: fuelEnum("fuel").notNull(),

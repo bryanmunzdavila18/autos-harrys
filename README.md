@@ -1,6 +1,6 @@
 # Autos Harrys
 
-> Plataforma web para autolote en Costa Rica: catálogo público SEO-friendly + back-office para gestión de inventario y solicitudes de compra.
+> Plataforma web para autolote en Managua, Nicaragua: catálogo público SEO-friendly + back-office para gestión de inventario y solicitudes de compra.
 
 Construida como proyecto de portafolio mientras se entrega como producto real al cliente final. El foco está en arquitectura limpia, performance, accesibilidad y experiencia de developer end-to-end.
 

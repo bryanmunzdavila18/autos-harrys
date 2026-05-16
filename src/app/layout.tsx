@@ -21,14 +21,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Autos Harrys — Venta de vehículos usados en Costa Rica",
+    default: "Autos Harrys — Venta de vehículos usados en Managua, Nicaragua",
     template: "%s | Autos Harrys",
   },
   description:
     "Catálogo de vehículos usados con financiamiento. Encuentra tu próximo carro en Autos Harrys.",
   openGraph: {
     type: "website",
-    locale: "es_CR",
+    locale: "es_NI",
     siteName: "Autos Harrys",
   },
   robots: { index: true, follow: true },
