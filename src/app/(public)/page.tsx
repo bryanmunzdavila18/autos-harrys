@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, BadgeCheck, MessageCircle, ShieldCheck, Wallet } from "lucide-react";
+import { HeroVehicle } from "@/components/features/hero-vehicle";
 import { VehicleCard } from "@/components/features/vehicle/vehicle-card";
 import { CONTACT, whatsappLink } from "@/lib/contact";
 import { getFeaturedVehicles } from "@/server/queries/vehicles";
@@ -21,40 +22,76 @@ export default async function LandingPage() {
           aria-hidden
         />
         <div
-          className="bg-brand-navy/10 absolute -bottom-40 -left-40 -z-10 h-[28rem] w-[28rem] rounded-full blur-3xl"
+          className="bg-brand-navy/15 absolute -bottom-40 -left-40 -z-10 h-[28rem] w-[28rem] rounded-full blur-3xl"
           aria-hidden
         />
 
-        <div className="mx-auto flex max-w-6xl flex-col items-center px-4 pt-20 pb-24 text-center sm:px-6 sm:pt-28 sm:pb-32">
-          <span className="font-script text-brand-navy mb-2 text-3xl sm:text-4xl">
-            Mi mejor elección
-          </span>
-          <h1 className="font-display text-4xl leading-[1.05] font-black tracking-tight text-balance sm:text-6xl lg:text-7xl">
-            Encuentra tu próximo carro en <span className="text-brand-red">Autos Harry&apos;s</span>
-          </h1>
-          <p className="text-muted-foreground mt-6 max-w-2xl text-lg text-pretty sm:text-xl">
-            Catálogo de vehículos usados verificados, con opciones de financiamiento. Atención
-            personalizada en Managua.
-          </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/vehiculos"
-              className="bg-brand-red text-brand-red-foreground inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold shadow-md shadow-red-900/10 transition hover:opacity-90"
-            >
-              Ver catálogo
-              <ArrowRight className="size-4" aria-hidden />
-            </Link>
-            {CONTACT.hasWhatsapp && (
-              <a
-                href={whatsappLink("Hola, me interesa ver vehículos de su catálogo")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-brand-navy/20 bg-background text-brand-navy hover:bg-brand-navy/5 inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition"
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 pt-16 pb-20 sm:px-6 sm:pt-24 sm:pb-24 lg:grid-cols-12 lg:gap-10 lg:pt-28 lg:pb-32">
+          <div className="lg:col-span-6 lg:text-left">
+            <span className="font-script text-brand-navy mb-2 block text-3xl sm:text-4xl">
+              Mi mejor elección
+            </span>
+            <h1 className="font-display text-4xl leading-[1.05] font-black tracking-tight text-balance sm:text-5xl lg:text-6xl">
+              Encuentra tu próximo carro en{" "}
+              <span className="text-brand-red">Autos Harry&apos;s</span>
+            </h1>
+            <p className="text-muted-foreground mt-6 max-w-xl text-lg text-pretty">
+              Catálogo de vehículos usados verificados, con opciones de financiamiento. Atención
+              personalizada en Managua.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link
+                href="/vehiculos"
+                className="bg-brand-red text-brand-red-foreground inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold shadow-md shadow-red-900/10 transition hover:opacity-90"
               >
-                <MessageCircle className="size-4" aria-hidden />
-                Escríbenos por WhatsApp
-              </a>
-            )}
+                Ver catálogo
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
+              {CONTACT.hasWhatsapp && (
+                <a
+                  href={whatsappLink("Hola, me interesa ver vehículos de su catálogo")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-brand-navy/20 bg-background text-brand-navy hover:bg-brand-navy/5 inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition"
+                >
+                  <MessageCircle className="size-4" aria-hidden />
+                  Escríbenos por WhatsApp
+                </a>
+              )}
+            </div>
+
+            <dl className="border-border/60 divide-border/60 mt-10 grid max-w-md grid-cols-3 divide-x border-t border-b py-4 text-center lg:text-left">
+              <div className="px-2 lg:pl-0">
+                <dt className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
+                  Inventario
+                </dt>
+                <dd className="font-display text-brand-navy mt-1 text-2xl font-bold">10+</dd>
+              </div>
+              <div className="px-2">
+                <dt className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
+                  Marcas
+                </dt>
+                <dd className="font-display text-brand-navy mt-1 text-2xl font-bold">7</dd>
+              </div>
+              <div className="px-2">
+                <dt className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
+                  Años
+                </dt>
+                <dd className="font-display text-brand-navy mt-1 text-2xl font-bold">2019+</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div className="relative lg:col-span-6">
+            <div
+              className="bg-brand-red/15 absolute -top-12 -right-6 h-40 w-40 rounded-full blur-2xl"
+              aria-hidden
+            />
+            <div
+              className="bg-brand-navy/20 absolute -bottom-12 -left-6 h-40 w-40 rounded-full blur-2xl"
+              aria-hidden
+            />
+            <HeroVehicle className="relative drop-shadow-2xl" />
           </div>
         </div>
       </section>
