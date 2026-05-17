@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Calendar, ChevronRight, Fuel, Gauge, Mail, MessageCircle, Settings2 } from "lucide-react";
+import {
+  ArrowLeft,
+  Calendar,
+  ChevronRight,
+  Fuel,
+  Gauge,
+  Mail,
+  MessageCircle,
+  Settings2,
+} from "lucide-react";
 import { FinancingCalculator } from "@/components/features/vehicle/financing-calculator";
 import { VehicleCard } from "@/components/features/vehicle/vehicle-card";
 import { VehicleGallery } from "@/components/features/vehicle/vehicle-gallery";
@@ -65,20 +74,29 @@ export default async function VehicleDetailPage({ params }: { params: Promise<Ro
       <VehicleJsonLd vehicle={v} url={canonicalUrl} />
 
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
-        <nav
-          aria-label="Breadcrumb"
-          className="text-muted-foreground mb-6 flex flex-wrap items-center gap-1.5 text-xs"
-        >
-          <Link href="/" className="hover:text-foreground transition">
-            Inicio
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+          <Link
+            href="/vehiculos"
+            className="bg-brand-red text-brand-red-foreground inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold tracking-wide uppercase shadow-sm transition hover:opacity-90"
+          >
+            <ArrowLeft className="size-4" aria-hidden />
+            Volver al catálogo
           </Link>
-          <ChevronRight className="size-3" aria-hidden />
-          <Link href="/vehiculos" className="hover:text-foreground transition">
-            Catálogo
-          </Link>
-          <ChevronRight className="size-3" aria-hidden />
-          <span className="text-foreground font-medium">{vehicleLabel}</span>
-        </nav>
+          <nav
+            aria-label="Breadcrumb"
+            className="text-muted-foreground hidden flex-wrap items-center gap-1.5 text-xs sm:flex"
+          >
+            <Link href="/" className="hover:text-foreground transition">
+              Inicio
+            </Link>
+            <ChevronRight className="size-3" aria-hidden />
+            <Link href="/vehiculos" className="hover:text-foreground transition">
+              Catálogo
+            </Link>
+            <ChevronRight className="size-3" aria-hidden />
+            <span className="text-foreground font-medium">{vehicleLabel}</span>
+          </nav>
+        </div>
 
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-7">
