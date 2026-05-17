@@ -7,10 +7,10 @@ import {
   ChevronRight,
   Fuel,
   Gauge,
-  Mail,
   MessageCircle,
   Settings2,
 } from "lucide-react";
+import { LeadDialog } from "@/components/features/lead/lead-dialog";
 import { FinancingCalculator } from "@/components/features/vehicle/financing-calculator";
 import { VehicleCard } from "@/components/features/vehicle/vehicle-card";
 import { VehicleGallery } from "@/components/features/vehicle/vehicle-gallery";
@@ -66,8 +66,6 @@ export default async function VehicleDetailPage({ params }: { params: Promise<Ro
   const vehicleLabel = `${v.brand} ${v.model} ${v.year}`;
   const canonicalUrl = `${env.NEXT_PUBLIC_SITE_URL}/vehiculos/${v.slug}`;
   const whatsappMessage = `Hola, me interesa el ${vehicleLabel} de ${formatUsd(v.priceUsd)}. ¿Está disponible?`;
-  const mailSubject = `Consulta: ${vehicleLabel}`;
-  const mailBody = `Hola, vi el ${vehicleLabel} en su sitio y me gustaría más información. Gracias.`;
 
   return (
     <>
@@ -164,13 +162,7 @@ export default async function VehicleDetailPage({ params }: { params: Promise<Ro
                   Cotizar por WhatsApp
                 </a>
               ) : null}
-              <a
-                href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`}
-                className="border-brand-navy/20 bg-background text-brand-navy hover:bg-brand-navy/5 inline-flex w-full items-center justify-center gap-2 rounded-full border px-6 py-3.5 text-sm font-semibold transition"
-              >
-                <Mail className="size-4" aria-hidden />
-                Enviar consulta por email
-              </a>
+              <LeadDialog vehicle={{ id: v.id, label: vehicleLabel }} />
             </div>
 
             <FinancingCalculator priceUsd={v.priceUsd} />
