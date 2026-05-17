@@ -1,4 +1,4 @@
-# Autos Harrys
+# Autos Harry's
 
 > Plataforma web para autolote en Managua, Nicaragua: catálogo público SEO-friendly + back-office para gestión de inventario y solicitudes de compra.
 

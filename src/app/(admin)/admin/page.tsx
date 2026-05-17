@@ -1,9 +1,11 @@
 export default function AdminDashboardPage() {
   return (
     <div className="space-y-2">
-      <h1 className="text-2xl font-semibold tracking-tight">Dashboard</h1>
-      <p className="text-muted-foreground">
-        Panel de administración de Autos Harrys. Próximamente: métricas, vehículos y solicitudes.
+      <p className="text-brand-red text-xs font-semibold tracking-widest uppercase">Dashboard</p>
+      <h1 className="font-display text-3xl font-black tracking-tight">Hola, admin</h1>
+      <p className="text-muted-foreground max-w-xl text-sm">
+        Panel de administración de Autos Harry&apos;s. Próximamente: métricas de leads, vehículos
+        publicados y conversión.
       </p>
     </div>
   );
