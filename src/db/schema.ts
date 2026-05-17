@@ -10,6 +10,8 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
+export * from "./auth-schema";
+
 export const vehicleStatusEnum = pgEnum("vehicle_status", [
   "draft",
   "published",
